@@ -3,6 +3,7 @@ import { ProductService } from "./service/ProductService";
 import { ProductBook } from "./model/ProductBook";
 
 const productService = new ProductService();
+try{
 while (true) {
   console.log("digite a opção desejada: ");
   console.log(
@@ -65,4 +66,8 @@ while (true) {
     default:
       console.log("opção inexistente");
   }
+}
+
+} catch(error){
+  console.log(`deu ruim ${error}`)
 }
