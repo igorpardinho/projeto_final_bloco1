@@ -14,11 +14,12 @@ export class ProductService implements ProductRepository {
     const product = this.books.find((products) => products.id === id);
     return product ?? null;
   }
-  delete(id: number): void {
+  delete(id: number): boolean {
     const productIndex = this.books.findIndex((product) => product.id === id);
-
     if (productIndex !== -1) {
       this.books.splice(productIndex, 1);
+      return true
     }
+    return false
   }
 }
